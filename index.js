@@ -14,8 +14,8 @@ app.post('/receive', bodyParser.json(), function(req, res) {
     io.emit('new_msg', req.body);
 });
 
-
-server.listen(9998);
+var port = Number(process.env.PORT || 9998);
+server.listen(port);
 
 // connection event for each connected client
 io.on('connection', function (socket) {
