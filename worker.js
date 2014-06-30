@@ -34,6 +34,7 @@ var sendTweet = function(infos) {
             }
             else {
                 console.log("error while sending to Odi", res.text);
+                console.log("res", res);
             }
         });
 };
@@ -69,9 +70,9 @@ stream.on('tweet', function(tweet) {
     var matchingKeyword = _.find(keywords, function(keyword) {
         return tweet.text.indexOf(keyword) > -1;
     });
-    console.log("found matching keyword: ", matchingKeyword);
 
     if (matchingKeyword != undefined) {
+        console.log("found matching keyword: ", matchingKeyword);
         var stadium = _.find(stadiums, function(stadium) {
             return stadium.keywords.indexOf(matchingKeyword) > -1;
         });
