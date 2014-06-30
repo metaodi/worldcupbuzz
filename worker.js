@@ -53,6 +53,14 @@ var geocode = function(loc, callback) {
 
 }
 
+var infosCallback = function (infos) {
+    return function(coords) {
+        if (coords) {
+            infos.coordinates = {'type': 'Point', 'coordinates': coords};
+        }
+        sendTweet(infos);
+    }
+
 var stream = T.stream('statuses/filter', { track: keywords })
 
 stream.on('tweet', function(tweet) {
@@ -87,20 +95,10 @@ stream.on('tweet', function(tweet) {
         if (tweet.coordinates) {
             infos.coordinates = tweet.coordinates;
         } else if (tweet.user.location) {
-            geocode(tweet.user.location, function(coords) {
-                if (coords) {
-                    infos.coordinates = {'type': 'Point', 'coordinates': coords};
-                }
-                sendTweet(infos);
-            });
+            geocode(tweet.user.location, infoCallback(infos));
             return;
         } else if (tweet.user.time_zone) {
-            geocode(tweet.user.time_zone, function(coords) {
-                if (coords) {
-                    infos.coordinates = {'type': 'Point', 'coordinates': coords};
-                }
-                sendTweet(infos);
-            });
+            geocode(tweet.user.time_zone, infoCallback(infos));
             return;
         }
         sendTweet(infos);
