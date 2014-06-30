@@ -21,6 +21,9 @@ brasilia:
         - "#france"
         - "#nigeria"
         - "#FranceVsNigeria"
+        - "France"
+        - "Nigeria"
+        - "worldcup"
     coordinates:
         long: -47.899211
         lat: -15.783519
