@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.10'
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app:
+    master: worldcupbuzz
+  on:
+    repo: metaodi/worldcupbuzz
+    node: '0.10'
+  api_key:
+    secure: RFmts18WeUhtxHLwTam2tf9CfVRgCaK14Xn2xA3aM7CQII8adHU5KLrLtWoAy51cTnfEHrUi/8/2sC8ckKpfHFBs41VkFKOnWFP3cX6KDH0Wrp18CubK9bTFfOWOPWL3Bhl3L+1F20CWU8Xg7CouqWILngVLERlC1kGvmhSfJ+U=
