@@ -40,9 +40,11 @@ var sendTweet = function(infos) {
 };
 
 var geocode = function(loc, callback) {
+    var result = false;
     Superagent
         .get('http://open.mapquestapi.com/geocoding/v1/address?maxResults=1&key=' + config.mapquest.appkey + '&location=' + loc)
         .end(function(res) {
+            result = true;
             if (!res.ok || !res.body.locations || !res.body.locations[0]) {
                 callback(null);
                 return;
@@ -51,6 +53,12 @@ var geocode = function(loc, callback) {
             var cords = res.body.locations[0].latLng;
             callback([cords.lng, cords.lat]);
         });
+
+    setTimeout(function() {
+        if (!result) {
+            callback(null);
+        }
+    }, 2000);
 
 };
 
