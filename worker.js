@@ -96,10 +96,10 @@ stream.on('tweet', function(tweet) {
         if (tweet.coordinates) {
             infos.coordinates = tweet.coordinates;
         } else if (tweet.user.location) {
-            geocode(tweet.user.location, infoCallback(infos));
+            geocode(tweet.user.location, infosCallback(infos));
             return;
         } else if (tweet.user.time_zone) {
-            geocode(tweet.user.time_zone, infoCallback(infos));
+            geocode(tweet.user.time_zone, infosCallback(infos));
             return;
         }
         sendTweet(infos);
