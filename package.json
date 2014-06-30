@@ -1,0 +1,24 @@
+{
+  "name": "worldcupbuzz",
+  "version": "0.0.1",
+  "description": "Node application to visualize the buzz around the world cup",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Stefan Oderbolz <odi@readmore.ch> (http://metaodi.ch/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/metaodi/worldcupbuzz.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.4",
+    "js-yaml": "^3.0.2",
+	"superagent": "^0.18.0",
+    "socket.io": "^1.0.6",
+    "twit": "^1.1.15",
+    "underscore": "^1.6.0"
+  }
+}
