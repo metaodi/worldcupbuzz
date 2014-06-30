@@ -4,10 +4,6 @@ minas_gerais:
     keywords:
         - "Minas Gerais"
         - "Mineirao"
-        - "#bra"
-        - "#chi"
-        - "#bravschi"
-        - "#brachi"
     coordinates:
         long: -43.971132
         lat: -19.865867
@@ -18,6 +14,12 @@ brasilia:
         - "Brasilia"
         - "Mane Garrincha"
         - "Estadio Nacional"
+        - "#franig"
+        - "#fra"
+        - "#nig"
+        - "#fravsnig"
+        - "#france"
+        - "#nigeria"
     coordinates:
         long: -47.899211
         lat: -15.783519
@@ -78,6 +80,12 @@ porto_alegre:
     keywords:
         - "Porto Alegre"
         - "Beira Rio"
+        - "#geralg"
+        - "#gervsalg"
+        - "#germany"
+        - "#algeria"
+        - "#ger"
+        - "#alg"
     coordinates:
         long: -51.23585
         lat: -30.06589

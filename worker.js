@@ -55,7 +55,7 @@ stream.on('tweet', function(tweet) {
 
         console.log('incoming tweet:', infos);
         Superagent
-            .post('http://localhost:9998/receive')
+            .post('http://worldcupbuzz.herokuapp.com/receive')
             .set('Content-Type', 'application/json')
             .send(infos)
             .end(function(res) {
