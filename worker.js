@@ -36,7 +36,7 @@ var sendTweet = function(infos) {
                 console.log("error while sending to Odi", res.text);
             }
         });
-}
+};
 
 var geocode = function(loc, callback) {
     Superagent
@@ -51,7 +51,7 @@ var geocode = function(loc, callback) {
             callback([cords.lng, cords.lat]);
         });
 
-}
+};
 
 var infosCallback = function (infos) {
     return function(coords) {
@@ -60,6 +60,7 @@ var infosCallback = function (infos) {
         }
         sendTweet(infos);
     }
+};
 
 var stream = T.stream('statuses/filter', { track: keywords })
 
