@@ -22,6 +22,37 @@ var keywords = _.flatten(_.map(stadiums, function(value, key) {
 
 console.log("tracking keywords: ", keywords);
 
+var sendTweet = function(infos) {
+    console.log('incoming tweet:', infos);
+    Superagent
+        .post('http://worldcupbuzz.herokuapp.com/receive')
+        .set('Content-Type', 'application/json')
+        .send(infos)
+        .end(function(res) {
+            if (res.ok) {
+                console.log("sent to Odi");
+            }
+            else {
+                console.log("error while sending to Odi", res.text);
+            }
+        });
+}
+
+var geocode = function(loc, callback) {
+    Superagent
+        .get('http://open.mapquestapi.com/geocoding/v1/address?maxResults=1&key=' + config.mapquest.appkey + '&location=' + loc)
+        .end(function(res) {
+            if (!res.ok || !res.body.locations || !res.body.locations[0]) {
+                callback(null);
+                return;
+            }
+            console.log("Location", res.body.locations[0]);
+            var cords = res.body.locations[0].latLng;
+            callback([cords.lng, cords.lat]);
+        });
+
+}
+
 var stream = T.stream('statuses/filter', { track: keywords })
 
 stream.on('tweet', function(tweet) {
@@ -40,7 +71,7 @@ stream.on('tweet', function(tweet) {
             origin: 'twitter',
             user: tweet.user.screen_name,
             tweet: tweet.text,
-            coordinates: tweet.coordinates,
+            coordinates: null,
             stadium: {
                 name: stadium.name,
                 coordinates: {
@@ -53,18 +84,25 @@ stream.on('tweet', function(tweet) {
             }
         };
 
-        console.log('incoming tweet:', infos);
-        Superagent
-            .post('http://worldcupbuzz.herokuapp.com/receive')
-            .set('Content-Type', 'application/json')
-            .send(infos)
-            .end(function(res) {
-                if (res.ok) {
-                    console.log("sent to Odi");
+        if (tweet.coordinates) {
+            infos.coordinates = tweet.coordinates;
+        } else if (tweet.user.location) {
+            geocode(tweet.user.location, function(coords) {
+                if (coords) {
+                    infos.coordinates = {'type': 'Point', 'coordinates': coords};
                 }
-                else {
-                    console.log("error while sending to Odi", res.text);
-                }
+                sendTweet(infos);
             });
+            return;
+        } else if (tweet.user.time_zone) {
+            geocode(tweet.user.time_zone, function(coords) {
+                if (coords) {
+                    infos.coordinates = {'type': 'Point', 'coordinates': coords};
+                }
+                sendTweet(infos);
+            });
+            return;
+        }
+        sendTweet(infos);
     }
 });
