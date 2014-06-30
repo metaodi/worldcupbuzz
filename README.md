@@ -7,4 +7,6 @@ It contains two parts:
 1. Getting the data out of twitter (run using `node worker.js`)
 2. Put it on a map (run using `node index.js`)
 
-After that you can visit http://localhost:9998/map/ and see the map with the appearing tweets.
+After that you can visit http://localhost:9998 and see the map with the appearing tweets.
+
+There is a deployed instance on heroku: http://worldcupbuzz.herokuapp.com/
