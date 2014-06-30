@@ -21,9 +21,6 @@ brasilia:
         - "#france"
         - "#nigeria"
         - "#FranceVsNigeria"
-        - "France"
-        - "Nigeria"
-        - "worldcup"
     coordinates:
         long: -47.899211
         lat: -15.783519
@@ -52,10 +49,6 @@ fortaleza:
     keywords:
         - "Fortaleza"
         - "Castelao"
-        - "#nedmex"
-        - "#nedvsmex"
-        - "#ned"
-        - "#mex"
     coordinates:
         long: -38.522434
         lat: -3.807231
