@@ -5,7 +5,10 @@ var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 
 //serve map directory
-app.use('/map', express.static(__dirname + '/map'));
+app.use('/', express.static(__dirname + '/map'));
+app.get('/map', function(req, res){
+    res.redirect('/');
+});
 
 app.post('/receive', bodyParser.json(), function(req, res) {
     console.log("got request", req.body);
