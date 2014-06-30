@@ -37,7 +37,7 @@ $(document).ready(function() {
     console.log("Ready");
     var map = L.map('map').setView([-10.783519, -47.899211], 5);
     L.tileLayer('http://tiles.lyrk.org/ls/{z}/{x}/{y}?apikey=1ed7ffbc9af144e1ae2d3da37136f624', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://geodienste.lyrk.de/">Lyrk</a>',
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://geodienste.lyrk.de/">Lyrk</a>, Geocoding Courtesy of <a href="http://www.mapquest.com/">MapQuest</a>',
         maxZoom: 18
     }).addTo(map);
 
