@@ -4,6 +4,14 @@ minas_gerais:
     keywords:
         - "Minas Gerais"
         - "Mineirao"
+        - "Belo Horizonte"
+        - "#bra"
+        - "#ger"
+        - "#brager"
+        - "#bravsger"
+        - "#Brazil"
+        - "#Germany"
+        - "#BrazilvsGermany"
     coordinates:
         long: -43.971132
         lat: -19.865867
@@ -14,13 +22,6 @@ brasilia:
         - "Brasilia"
         - "Mane Garrincha"
         - "Estadio Nacional"
-        - "#franga"
-        - "#fra"
-        - "#nga"
-        - "#fravsnga"
-        - "#france"
-        - "#nigeria"
-        - "#FranceVsNigeria"
     coordinates:
         long: -47.899211
         lat: -15.783519
@@ -77,12 +78,6 @@ porto_alegre:
     keywords:
         - "Porto Alegre"
         - "Beira Rio"
-        - "#geralg"
-        - "#gervsalg"
-        - "#germany"
-        - "#algeria"
-        - "#ger"
-        - "#alg"
     coordinates:
         long: -51.23585
         lat: -30.06589
@@ -92,12 +87,6 @@ recife:
     keywords:
         - "Recife"
         - "Pernambuco"
-        - "#crcgre"
-        - "#crcvsgre"
-        - "#crc"
-        - "#gre"
-        - "#CostaRica"
-        - "#Greece"
     coordinates:
         long: -35.00826
         lat: -8.04124
@@ -126,6 +115,14 @@ sao_paolo:
         - "Sao Paolo"
         - "Arena Corinthians"
         - "Arena de Sao Paulo"
+        - "#ned"
+        - "#arg"
+        - "#nedarg"
+        - "#nedvsarg"
+        - "#Netherlands"
+        - "#Holland"
+        - "#Argentina"
+        - "#NetherlandsVsArgentina"
     coordinates:
         long: -46.473702
         lat: -23.545333
